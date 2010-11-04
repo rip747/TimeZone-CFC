@@ -221,7 +221,7 @@ methods in this CFC:
 		<cfargument name="thisDate" required="yes" type="date">
 		<cfargument name="tz" required="false" default="#variables.mytz#">
 
-		<cfset var thisOffset=getTZOffsetBase(arguments.thisDate, arguments.thisTZ)/1000>
+		<cfset var thisOffset=getTZOffsetBase(arguments.thisDate, arguments.tz)/1000>
 		<cfreturn dateAdd("s",thisOffset,arguments.thisDate)>
 	</cffunction>
 
