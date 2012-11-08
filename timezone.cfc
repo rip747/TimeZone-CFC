@@ -274,8 +274,8 @@ methods in this CFC:
 		<cfreturn dateAdd("s",getTZOffsetBase(utcDate, arguments.toTZ)/1000,utcDate)>
 	</cffunction>
 
-	<!--- getTimeZone --->
-	<cffunction name="getTimeZone" output="false" access="public" returntype="any"
+<!--- getTZ, formerly getTimeZone but that conflicts with a Railo function- fix from https://github.com/rip747/TimeZone-CFC/issues/3 --->
+	<cffunction name="getTZ" output="false" access="public" returntype="any"
 				hint="returns the timezone detail. contributed by john thwaites: johnthwaites@logicdepot.com">
 		<cfargument name="tz" required="false" default="#variables.mytz#">
 		<cfargument name="today" required="false" default="#now()#">
@@ -482,7 +482,7 @@ methods in this CFC:
 	
 		if (isValidTZ(aTZ))
 		{
-			aTZStruct.Entry[aTZ].Detail = getTimeZone(aTZ);
+			aTZStruct.Entry[aTZ].Detail = getTZ(aTZ);
 		}
 		else
 		{
