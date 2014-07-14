@@ -482,7 +482,7 @@ methods in this CFC:
 	
 		if (isValidTZ(aTZ))
 		{
-			aTZStruct.Entry[aTZ].Detail = getTimeZone(aTZ);
+			aTZStruct.Entry[aTZ].Detail = this.getTimeZone(aTZ);
 		}
 		else
 		{
